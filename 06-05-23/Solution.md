@@ -9,6 +9,8 @@ Here are the descriptions of this group of friends:
 
 After 1234 seconds, what is the distance of the winning runner?
 
+Time Complexity for this algo is **O(n)**
+
 ### Code 
 
 ```python
