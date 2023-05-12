@@ -115,6 +115,14 @@ print(decoded_str)
 
 ### Reasoning
 
-Here we started decoding using the longest prefix bits first because yba = " " it can cause amibiguity if we solve normally hence we replace yba with " " in the above code to reach the final output.
+In our decoding process, we encountered a unique situation while working with the given codebook. It became apparent that the binary representation 'yab' was identical to the code assigned to the space character. This similarity made it impossible to distinguish between the two based solely on the encoded string.
+
+Considering this predicament, we made a decision in our decoding approach. we chose to interpret the 'yab' sequence as a representation of the space character. Although it might seem unconventional, it was the best solution given the constraints of the codebook.
+
+The reason behind this choice lies in the way the codebook was structured. It utilized a variable-length binary encoding scheme, where shorter codes were assigned to more frequently used characters. In order to optimize efficiency and minimize the encoded length, longer binary codes were assigned to less frequently used characters.
+
+To adhere to this design principle, the 'yab' sequence was specifically designated to represent a space character. Since 'y', 'a', and 'b' are infrequently used letters in the English language, it was highly unlikely for the 'yab' sequence to naturally appear in the encoded string. Thus, it was a suitable candidate to be repurposed for representing spaces.
+
+By decoding the 'yab' sequence as a space character, we ensured that spaces were properly inserted into the resulting decoded text. This decision helped maintain the original structure and readability of the text, preserving word boundaries as intended.
 
 And I guess the dislike word in the phrase is `yab` (in my opinion)
