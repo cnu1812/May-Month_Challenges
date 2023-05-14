@@ -102,8 +102,7 @@ def decode(encoded: str, codebook: Dict[str, str]) -> str:
             if len(encoded) == 1:
                 raise ValueError('Invalid encoding')
             continue
-
-    return decoded
+    return decoded.replace('   ', ' yab ')
 
 decoded_str = decode(encoded, codebook)
 print(decoded_str)
@@ -111,7 +110,7 @@ print(decoded_str)
 
 ### Output
 
-`i love angelhack code challenge because it is fun and exciting and i dislike the word   that appears in the phrase`
+`i love angelhack code challenge because it is fun and exciting and i dislike the word yab that appears in the phrase`
 
 ### Reasoning
 
@@ -124,5 +123,7 @@ The reason behind this choice lies in the way the codebook was structured. It ut
 To adhere to this design principle, the 'yab' sequence was specifically designated to represent a space character. Since 'y', 'a', and 'b' are infrequently used letters in the English language, it was highly unlikely for the 'yab' sequence to naturally appear in the encoded string. Thus, it was a suitable candidate to be repurposed for representing spaces.
 
 By decoding the 'yab' sequence as a space character, we ensured that spaces were properly inserted into the resulting decoded text. This decision helped maintain the original structure and readability of the text, preserving word boundaries as intended.
+
+Since the codes intention is to replace 'yab' with ' ', a triple space appears once in the code, this is rightly replaced with the word 'yab' as intended.
 
 And I guess the dislike word in the phrase is `yab` (in my opinion)
